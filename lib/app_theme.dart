@@ -16,6 +16,21 @@ class AppTheme {
       selectedItemColor: white,
       unselectedItemColor: white,
     ),
+    textTheme: TextTheme(
+      bodyLarge: TextStyle(
+        color: primaryColor,
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+      ),
+      bodyMedium: TextStyle(color: black, fontSize: 16),
+    ),
   );
-  static ThemeData darkTheme = ThemeData();
+  static ThemeData darkTheme = ThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: primaryColor,
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: white,
+      unselectedItemColor: white,
+    ),
+  );
 }
