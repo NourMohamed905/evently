@@ -1,0 +1,39 @@
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  if (currentIndex ==
+                                      onboardingScreensI.length - 1) {
+                                    Navigator.pushReplacementNamed(
+                                      context,
+                                      HomeScreen.routeName,
+                                    );
+                                  } else {
+                                    pageController.nextPage(
+                                      duration: Duration(milliseconds: 300),
+                                      curve: Curves.easeIn,
+                                    );
+                                  }
+                                },
+                                icon: Icon(
+                                  currentIndex == onboardingScreensI.length - 1
+                                      ? Icons.check
+                                      : Icons.arrow_forward,
+                                  color: AppTheme.primaryColor,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    HomeScreen.routeName,
+                                  );
+                                },
+                                icon: Icon(
+                                  Icons.close,
+                                  color: AppTheme.primaryColor,
+                                ),
+                              ),
+                            ],
+                          ),
