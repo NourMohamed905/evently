@@ -3,12 +3,18 @@ import 'package:evently/home_screen.dart';
 import 'package:evently/onboarding_screens/on_boarding_screen.dart';
 import 'package:evently/onboarding_screens/onboarding_one.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(EventlyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool seenOnboarding = prefs.getBool('seenOnboarding') ?? false;
+  runApp(EventlyApp(seenOnboarding: seenOnboarding));
 }
 
 class EventlyApp extends StatelessWidget {
+  bool seenOnboarding;
+  EventlyApp({required this.seenOnboarding});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +27,9 @@ class EventlyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      initialRoute: OnboardingOne.routeName,
+      initialRoute: seenOnboarding
+          ? HomeScreen.routeName
+          : OnboardingOne.routeName,
     );
   }
 }

@@ -24,6 +24,11 @@ class AppTheme {
       ),
       bodyMedium: TextStyle(color: black, fontSize: 16),
     ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: primaryColor,
+      foregroundColor: white,
+      shape: CircleBorder(side: BorderSide(color: white, width: 0)),
+    ),
   );
   static ThemeData darkTheme = ThemeData(
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
