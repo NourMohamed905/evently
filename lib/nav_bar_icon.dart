@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class NavBarIcons extends StatelessWidget {
   String iconName;
-  NavBarIcons({required this.iconName});
+  NavBarIcons({super.key, required this.iconName});
 
   @override
   Widget build(BuildContext context) {
