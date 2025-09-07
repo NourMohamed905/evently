@@ -1,20 +1,21 @@
-import 'package:evently/auth/register_screen.dart';
+import 'package:evently/auth/login_screen.dart';
 import 'package:evently/widget/button_item.dart';
 import 'package:evently/widget/text_button_item.dart';
 import 'package:evently/widget/text_faild_item.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  static const String routeName = '/login';
+class RegisterScreen extends StatefulWidget {
+  static const String routeName = '/register';
 
-  const LoginScreen({super.key});
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController passwordContorller = TextEditingController();
 
   @override
@@ -36,6 +37,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 16),
               TextFaildItem(
+                hintText: 'name',
+                keyboardType: TextInputType.name,
+                prefixIcon: 'name',
+                controller: nameController,
+              ),
+              SizedBox(height: 16),
+              TextFaildItem(
                 hintText: 'email',
                 keyboardType: TextInputType.emailAddress,
                 prefixIcon: 'email',
@@ -50,23 +58,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: passwordContorller,
               ),
               SizedBox(height: 16),
-              TextButtonItem(onPressed: () {}, text: 'Forgot Password ?'),
 
-              ButtonItem(text: 'Login', onPressed: () {}),
-              SizedBox(height: 24),
+              ButtonItem(text: 'Create Account', onPressed: () {}),
+              SizedBox(height: 16),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don’t Have Account ? ",
+                    "Already Have Account ?",
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   TextButtonItem(
                     onPressed: () => Navigator.of(
                       context,
-                    ).pushReplacementNamed(RegisterScreen.routeName),
-                    text: 'Create Account',
+                    ).pushReplacementNamed(LoginScreen.routeName),
+                    text: 'Login',
                   ),
                 ],
               ),
