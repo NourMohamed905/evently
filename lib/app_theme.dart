@@ -10,19 +10,47 @@ class AppTheme {
   static const Color red = Color(0xFFFF5659);
 
   static ThemeData lightTheme = ThemeData(
+    scaffoldBackgroundColor: backgroundColorLight,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primaryColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: primaryColor,
+        textStyle: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          decoration: TextDecoration.underline,
+        ),
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: primaryColor,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: white,
       unselectedItemColor: white,
     ),
+
+    buttonTheme: ButtonThemeData(
+      buttonColor: primaryColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      textTheme: ButtonTextTheme.primary,
+    ),
     textTheme: TextTheme(
-      bodyLarge: TextStyle(
+      titleLarge: TextStyle(
         color: primaryColor,
         fontWeight: FontWeight.bold,
         fontSize: 20,
       ),
-      bodyMedium: TextStyle(color: black, fontSize: 16),
+      bodyMedium: TextStyle(
+        color: black,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: primaryColor,

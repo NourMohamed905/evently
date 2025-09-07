@@ -1,4 +1,6 @@
 import 'package:evently/app_theme.dart';
+import 'package:evently/auth/login_screen.dart';
+import 'package:evently/auth/register_screen.dart';
 import 'package:evently/home_screen.dart';
 import 'package:evently/onboarding_screens/on_boarding_screen.dart';
 import 'package:evently/onboarding_screens/onboarding_one.dart';
@@ -14,7 +16,7 @@ void main() async {
 
 class EventlyApp extends StatelessWidget {
   bool seenOnboarding;
-  EventlyApp({required this.seenOnboarding});
+  EventlyApp({super.key, required this.seenOnboarding});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,12 +25,14 @@ class EventlyApp extends StatelessWidget {
         HomeScreen.routeName: (_) => HomeScreen(),
         OnBoardingScreen.routeName: (_) => OnBoardingScreen(),
         OnboardingOne.routeName: (_) => OnboardingOne(),
+        LoginScreen.routeName: (_) => LoginScreen(),
+        RegisterScreen.routeName: (_) => RegisterScreen(),
       },
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
       initialRoute: seenOnboarding
-          ? HomeScreen.routeName
+          ? LoginScreen.routeName
           : OnboardingOne.routeName,
     );
   }

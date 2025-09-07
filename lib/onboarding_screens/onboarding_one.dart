@@ -7,6 +7,8 @@ import 'package:flutter_svg/svg.dart';
 class OnboardingOne extends StatefulWidget {
   static const String routeName = '/onboarding_one';
 
+  const OnboardingOne({super.key});
+
   @override
   State<OnboardingOne> createState() => _OnboardingOneState();
 }
