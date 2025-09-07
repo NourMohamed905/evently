@@ -1,4 +1,5 @@
 import 'package:evently/auth/register_screen.dart';
+import 'package:evently/home_screen.dart';
 import 'package:evently/widget/button_item.dart';
 import 'package:evently/widget/text_button_item.dart';
 import 'package:evently/widget/text_faild_item.dart';
@@ -52,9 +53,13 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 16),
               TextButtonItem(onPressed: () {}, text: 'Forgot Password ?'),
 
-              ButtonItem(text: 'Login', onPressed: () {}),
+              ButtonItem(
+                text: 'Login',
+                onPressed: () => Navigator.of(
+                  context,
+                ).pushReplacementNamed(HomeScreen.routeName),
+              ),
               SizedBox(height: 24),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
