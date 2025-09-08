@@ -32,7 +32,7 @@ class EventlyApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
       initialRoute: seenOnboarding
-          ? LoginScreen.routeName
+          ? HomeScreen.routeName
           : OnboardingOne.routeName,
     );
   }

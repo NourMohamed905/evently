@@ -16,7 +16,7 @@ class ButtonItem extends StatelessWidget {
         text,
         style: Theme.of(
           context,
-        ).textTheme.titleLarge!.copyWith(color: AppTheme.backgroundColorLight),
+        ).textTheme.titleLarge!.copyWith(color: AppTheme.white),
       ),
     );
   }

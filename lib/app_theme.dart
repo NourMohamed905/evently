@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static const Color primaryColor = Color(0xFF5669FF);
-  static const Color backgroundColorLight = Color(0xFFF2FEFF);
+  static const Color white = Color(0xFFF2FEFF);
   static const Color backgroundColorDarck = Color(0xFF101127);
   static const Color grey = Color(0xFF7B7B7B);
-  static const Color white = Color(0xFFF2FEFF);
   static const Color black = Color(0xFF1C1C1C);
   static const Color red = Color(0xFFFF5659);
 
   static ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: backgroundColorLight,
+    scaffoldBackgroundColor: white,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: primaryColor,
@@ -50,6 +49,16 @@ class AppTheme {
         color: black,
         fontSize: 16,
         fontWeight: FontWeight.w500,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
+        color: white,
+      ),
+      headlineSmall: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: white,
       ),
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(

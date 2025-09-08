@@ -63,7 +63,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-        decoration: BoxDecoration(color: AppTheme.backgroundColorLight),
+        decoration: BoxDecoration(color: AppTheme.white),
 
         child: Column(
           children: [
