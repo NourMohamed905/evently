@@ -52,7 +52,7 @@ class AppTheme {
       ),
       titleSmall: TextStyle(
         fontSize: 14,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.bold,
         color: white,
       ),
       headlineSmall: TextStyle(
