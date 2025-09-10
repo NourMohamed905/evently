@@ -4,12 +4,12 @@ import 'package:flutter_svg/svg.dart';
 class TextFaildItem extends StatelessWidget {
   TextInputType keyboardType;
   String hintText;
-  TextEditingController controller;
+  TextEditingController? controller;
   String? prefixIcon;
   IconData? SuffixIcon;
   TextFaildItem({
     super.key,
-    required this.controller,
+    this.controller,
     required this.hintText,
     required this.keyboardType,
     this.prefixIcon,
