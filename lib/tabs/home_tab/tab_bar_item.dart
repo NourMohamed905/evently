@@ -16,6 +16,7 @@ class TabBarItem extends StatelessWidget {
     required this.selectedBackgroundColor,
     required this.selectedForegroundColor,
     required this.unSelectedForegroundColor,
+    t,
   });
 
   @override
@@ -25,7 +26,9 @@ class TabBarItem extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(46),
         color: isSelected ? selectedBackgroundColor : Colors.transparent,
-        border: isSelected ? null : Border.all(width: 1, color: AppTheme.white),
+        border: isSelected
+            ? null
+            : Border.all(width: 1, color: unSelectedForegroundColor),
       ),
       child: Row(
         children: [

@@ -10,6 +10,16 @@ class AppTheme {
 
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: white,
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppTheme.white,
+      foregroundColor: AppTheme.primaryColor,
+      titleTextStyle: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.w500,
+        color: AppTheme.primaryColor,
+      ),
+      centerTitle: true,
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: primaryColor,
@@ -44,6 +54,11 @@ class AppTheme {
         color: primaryColor,
         fontWeight: FontWeight.bold,
         fontSize: 20,
+      ),
+      titleMedium: TextStyle(
+        fontWeight: FontWeight.normal,
+        fontSize: 20,
+        color: AppTheme.white,
       ),
       bodyMedium: TextStyle(
         color: black,

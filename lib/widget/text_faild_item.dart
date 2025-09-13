@@ -7,6 +7,7 @@ class TextFaildItem extends StatelessWidget {
   TextEditingController? controller;
   String? prefixIcon;
   IconData? SuffixIcon;
+  String? Function(String?)? validator;
   TextFaildItem({
     super.key,
     this.controller,
@@ -14,6 +15,7 @@ class TextFaildItem extends StatelessWidget {
     required this.keyboardType,
     this.prefixIcon,
     this.SuffixIcon,
+    this.validator,
   });
 
   @override
@@ -35,15 +37,7 @@ class TextFaildItem extends StatelessWidget {
                 ),
           suffixIcon: SuffixIcon == null ? null : Icon(SuffixIcon, size: 24),
         ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Please enter some text';
-          }
-          return null;
-        },
-        onSaved: (value) {
-          // Save the value to a variable or perform any action
-        },
+        validator: validator,
         keyboardType: keyboardType,
       ),
     );
