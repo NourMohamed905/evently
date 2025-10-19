@@ -14,13 +14,16 @@ class LoveTab extends StatelessWidget {
           children: [
             TextFaildItem(hintText: 'Search', keyboardType: TextInputType.name),
             SizedBox(height: 8),
-            Expanded(
+            /*Expanded(
               child: ListView.separated(
+                itemBuilder: (_ , index) => EventItem(),
+                itemBuilder: (_, index) => EventItem(),
+                itemBuilder: (_ , index) => EventItem(), 
                 itemBuilder: (_, index) => EventItem(),
                 separatorBuilder: (_, __) => SizedBox(height: 16),
                 itemCount: 20,
               ),
-            ),
+            ),*/
           ],
         ),
       ),

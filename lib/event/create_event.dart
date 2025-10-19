@@ -217,7 +217,7 @@ class _CreateEventState extends State<CreateEvent> {
         dateTime: dateTime,
         category: selectedCategory,
       );
-      FirebaseService.CreateEvent(event).then((_) {
+      FirebaseService.createEvent(event).then((_) {
         Navigator.of(context).pop();
       });
     }
