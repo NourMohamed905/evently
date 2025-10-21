@@ -1,4 +1,6 @@
 import 'package:evently/auth/login_screen.dart';
+import 'package:evently/firebase_service.dart';
+import 'package:evently/home_screen.dart';
 import 'package:evently/widget/button_item.dart';
 import 'package:evently/widget/text_button_item.dart';
 import 'package:evently/widget/text_faild_item.dart';
@@ -59,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 16),
 
-              ButtonItem(text: 'Create Account', onPressed: () {}),
+              ButtonItem(text: 'Create Account', onPressed: register),
               SizedBox(height: 16),
 
               Row(
@@ -82,5 +84,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
+  }
+
+  void register() {
+    FirebaseService.register(
+      name: nameController.text,
+      email: emailController.text,
+      password: passwordContorller.text,
+    ).then((user) {
+      Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+    });
   }
 }

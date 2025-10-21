@@ -1,4 +1,5 @@
 import 'package:evently/auth/register_screen.dart';
+import 'package:evently/firebase_service.dart';
 import 'package:evently/home_screen.dart';
 import 'package:evently/widget/button_item.dart';
 import 'package:evently/widget/text_button_item.dart';
@@ -53,12 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 16),
               TextButtonItem(onPressed: () {}, text: 'Forgot Password ?'),
 
-              ButtonItem(
-                text: 'Login',
-                onPressed: () => Navigator.of(
-                  context,
-                ).pushReplacementNamed(HomeScreen.routeName),
-              ),
+              ButtonItem(text: 'Login', onPressed: login),
               SizedBox(height: 24),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -80,5 +76,14 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void login() {
+    FirebaseService.login(
+      email: emailController.text,
+      password: passwordContorller.text,
+    ).then((user) {
+      Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+    });
   }
 }
