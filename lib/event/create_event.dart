@@ -1,13 +1,10 @@
 import 'package:evently/app_theme.dart';
 import 'package:evently/firebase_service.dart';
-import 'package:evently/home_screen.dart';
 import 'package:evently/models/category_model.dart';
 import 'package:evently/models/event_model.dart';
 import 'package:evently/tabs/home_tab/tab_bar_item.dart';
 import 'package:evently/widget/button_item.dart';
-import 'package:evently/widget/text_button_item.dart';
 import 'package:evently/widget/text_faild_item.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
